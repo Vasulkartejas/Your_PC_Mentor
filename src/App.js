@@ -8,12 +8,13 @@ import CustomPc from "./components/CustomPc";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
 import About from "./components/About";
+import Register from "./components/Register"
 import MainContainer from "./components/MainContainer";
 
 function App() {
   return (
     <AnimatePresence mode="wait">
-      <div className="w-screen h-auto flex flex-col bg-primary">
+      <div className="w-screen h-auto flex flex-col bg-headingColor">
        <Header />
        <main className="w-full px-8 py-4 md:px-16 mt-16 md:mt-16">
           <Routes>
@@ -23,6 +24,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/about" element={<About />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </main>
 

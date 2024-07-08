@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../css/Login.css';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -51,15 +52,17 @@ const Login = () => {
               {error}
             </div>
           )}
-          <button type="submit" className="btn btn-primary">
+          <div className='flex justify-center'>
+          <button type="submit" className="w-80 btn btn-primary">
             Login
           </button>
+          </div>
         </form>
         <p className="forgot-password">
           Forgot password? <a href="#">Click here</a>
         </p>
         <p className="forgot-password">
-          Don't have an account? <a href="#">Register here</a>
+          Don't have an account? <Link to={"/register"}>Register here</Link>
         </p>
       </div>
     </div>

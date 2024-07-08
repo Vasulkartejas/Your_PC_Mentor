@@ -6,18 +6,21 @@ const Footer = () => {
     return (
         <div className="bottom-0 h-auto flex flex-col items-center justify-center gap-2 border-t-2 p-4 border-black">
             <div className='w-full flex items-center justify-center gap-4'>
-                <a href="https://www.linkedin.com/in/akkkshattt/" target='_blank' rel="noreferrer" >
+                <a href="https://www.linkedin.com/in" target='_blank' rel="noreferrer" >
                     <div className='w-10 h-10 rounded-full bg-black flex items-center justify-center' >
-                        <AiFillLinkedin className='text-white' />
+                        <AiFillLinkedin className='text-textColor' />
                     </div>
                 </a>
-                <a href="https://github.com/Akkkshattt" target='_blank' rel="noreferrer" >
+                <a href="https://github.com/Vasulkartejas/Your_PC_Mentor/tree/master" target='_blank' rel="noreferrer" >
                     <div className='w-10 h-10 rounded-full bg-black flex items-center justify-center' >
-                        <AiOutlineGithub className='text-white' />
+                        <AiOutlineGithub className='text-textColor' />
                     </div>
                 </a>
             </div>
+            <div className='flex flex-col items-center justify-center'>
+            <p className='text-base tracking-normal'> 2024 YPM Your PC Mentor</p>
            <p className='text-base tracking-normal'> &#169; Copyright . All Rights Reserved</p>
+           </div>
         </div>
         
 

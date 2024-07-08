@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    right:{
+      19:"19px"
+    },
     width: {
       30:"30px",
       50: "50px",
@@ -24,8 +27,11 @@ module.exports = {
     },
     height: {
       30:"30px",
+      40:"40px",
       50: "50px",
       80: "80px",
+      90: "90px",
+      100: "100px",
       120: "120px",
       150: "150px",
       200: "200px",
@@ -56,8 +62,10 @@ module.exports = {
       '2xl': '1536px',
     },
     colors: {
-      headingColor: "#2e2e2e",
-      textColor: "#515151",
+      headingColor: "#000000",
+      // headingColor: "#2e2e2e",
+      textColor1: "#CBC3E3",
+      textColor: "#FFFFFF",
       cartNumBg: "#e80013",
       primary: "#e7e5e4",
       cardOverlay: "rgba(256,256,256,0.4)",

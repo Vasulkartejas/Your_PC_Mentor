@@ -5,35 +5,38 @@ import { Link } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
 //import Logo from "./img/logo.png";
 //import Avatar from './img/avatar.png';
+import Logo from "../images/Logo1.png"
 
 const Header = function Header() {
 
   return (
-    <header className="fixed bg-primary w-full z-50 md:p-6 md:px-16 p-3 px-8">
+    <header className="fixed bg-headingColor w-full z-50 md:p-6 md:px-16 p-3 px-8 m-0">
 
 
       {/* for desktop and tablet */}
 
 
       <div className="flex w-full h-full items-center justify-between">
+        <div className="h-80 rounded-full ">
         <Link to="/" className="mr-80 ml-4 flex items-center gap-2">
-          <img src="" alt="logo" className="w-10 object-cover" />
-          <p className="font-bold cursor-pointer text-xl text-headingColor relative top-8 -left-20">Your Pc Mentor</p>
+          <img src={Logo} alt="logo" className="h-50 object-cover"/>
+          <p className="font-bold cursor-pointer text-xl text-textColor relative top-12 -left-32 mt-3">Your Pc Mentor</p>
         </Link>
+        </div>
 
-        <div className="flex items-center mr-10 ml-80 gap-8 justify-between">
+        <div className="flex items-center mr-18 ml-80 gap-8 justify-between">
           <motion.ul
             initial={{ opacity: 0, x: 200 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 200 }}
             className="flex gap-8 items-center">
-            <Link to={"/home"} className="text-base text-textColor hover:text-headingColor hover:font-bold cursor-pointer duration-100 
+            <Link to={"/home"} className="text-base  text-textColor hover:text-textColor1 hover:text-xl hover:font-bold cursor-pointer duration-100 
              transition-all ease-in-out">Home</Link>
-            <Link to={"/Pcservice"} className="text-base text-textColor hover:text-headingColor hover:font-bold cursor-pointer duration-100 
+            <Link to={"/Pcservice"} className="text-base text-textColor hover:text-textColor1 hover:text-xl hover:font-bold cursor-pointer duration-100 
              transition-all ease-in-out">Pc Service</Link>
-            <Link to={"/customPc"} className="text-base text-textColor hover:text-headingColor hover:font-bold cursor-pointer duration-100 
-             transition-all ease-in-out">Custom PCs</Link>
-            <Link to={"/contact"} className="text-base text-textColor hover:text-headingColor hover:font-bold cursor-pointer duration-100 
+            <Link to={"/customPc"} className="text-base text-textColor hover:text-textColor1 hover:text-xl hover:font-bold cursor-pointer duration-100 
+             transition-all ease-in-out">Custom PC</Link>
+            <Link to={"/contact"} className="text-base text-textColor hover:text-textColor1 hover:text-xl hover:font-bold cursor-pointer duration-100 
              transition-all ease-in-out">Contact Us</Link>
           </motion.ul>
 
@@ -46,7 +49,7 @@ const Header = function Header() {
                   /> */}
 
            <Link to={"/login"}>
-           <RxAvatar className="text-3xl min-w-[30px] min-h-[30px]: cursor-pointer rounded-full hover:bg-card" />
+           <RxAvatar className="text-3xl text-textColor min-w-[30px] min-h-[30px]: cursor-pointer rounded-full hover:bg-card" />
            </Link> 
             {/* <motion.div
                       initial={{ opacity: 0, scale: 0.6 }}
