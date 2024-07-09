@@ -66,7 +66,7 @@ export default function HomeContainer() {
       </section>
 
       <section class="features">
-        <h2 className="text-2xl mb-2">Our Services</h2>
+        <h2 className="text-2xl mb-3">Our Services</h2>
         <div class="feature-grid">
           <Link to={"/login"}>
             <motion.div whileHover={{ scale: 1.1 }} class="feature">
@@ -77,6 +77,7 @@ export default function HomeContainer() {
               />
               <h3>Laptop Repair</h3>
               <p>From cracked screens to faulty keyboards, we fix it all.</p>
+              <p className='flex justify-end font-semibold underline'>Tap here</p>
             </motion.div>
           </Link>
 
@@ -91,6 +92,7 @@ export default function HomeContainer() {
               <p>
                 Get your desktop up and running with our expert repair services.
               </p>
+              <p className='flex justify-end font-semibold underline'>Tap here</p>
             </motion.div>
           </Link>
 
@@ -104,10 +106,43 @@ export default function HomeContainer() {
               <i class="fas fa-cogs"></i>
               <h3>Custom PC Builds</h3>
               <p>Let us build a custom PC that meets your specific needs.</p>
+              <p className='flex justify-end font-semibold underline'>Tap here</p>
             </motion.div>
           </Link>
         </div>
 
+        <section class="testimonials1">
+          <h2 className='text-2xl mb-2'>FAQS</h2>
+          <div class="testimonial-grid2">
+            <div class="testimonial">
+              <p>
+                <p className='font-bold block text-2xl'>Some of the most frequently asked questions:</p>
+                <p className='font-semibold'>General</p>
+                <span className='block text-2xl font-semibold'>1. Q: What services do you offer? </span>
+                <span className='text-xl'>
+                  A: We offer a range of services, including tech support, custom PC builds, laptop and desktop repairs, and more.
+                </span>
+
+                <span className='block text-2xl font-semibold'>
+                  2. Q: What areas do you serve?
+                </span>
+                <span className='text-xl'>
+                  A: We offer a range of services, including tech support, custom PC builds, laptop and desktop repairs, and offer pickup and delivery services for your convenience.
+                </span>
+                <span className='block text-2xl font-semibold'>
+                  3. Q: What are your business hours?
+                </span>
+
+                <span className='text-xl'>
+                  A: Our business hours are 9am-7pm, but we also offer emergency support services outside of regular hours.
+                </span>
+
+              </p>
+
+            </div>
+
+          </div>
+        </section>
 
       </section>
       <section class="testimonials">
@@ -116,7 +151,7 @@ export default function HomeContainer() {
         <div class="testimonial-grid">
           <div class="card">
             <a class="card1" href="#">
-              <p>- Rohan</p>
+              <p>- Suresh </p>
               <p class="small"> "I was impressed with the quick turnaround time and the quality of
                 the repair."</p>
               <div class="go-corner" href="#">
@@ -173,40 +208,13 @@ export default function HomeContainer() {
             <span>- Ajju Gamer</span>
           </div>*/}
         </div>
+        
+
+
+
       </section>
 
-      <section class="testimonials">
-        <h2 className='text-2xl mb-2'>FAQS</h2>
-        <div class="testimonial-grid1">
-          <div class="testimonial">
-            <p>
-              <p className='font-bold block text-2xl'>Some of the most frequently asked questions:</p>
-              <p className='font-semibold'>General</p>
-              <span className='block text-2xl font-semibold'>1. Q: What services do you offer? </span>
-              <span className='text-xl'>
-                A: We offer a range of services, including tech support, custom PC builds, laptop and desktop repairs, and more.
-              </span>
 
-              <span className='block text-2xl font-semibold'>
-                2. Q: What areas do you serve?
-              </span>
-              <span className='text-xl'>
-                A: We serve [insert areas/cities/regions] and offer pickup and delivery services for your convenience.
-              </span>
-              <span className='block text-2xl font-semibold'>
-                3. Q: What are your business hours?
-              </span>
-
-              <span className='text-xl'>
-                A: Our business hours are [insert hours], but we also offer emergency support services outside of regular hours.
-              </span>
-
-            </p>
-
-          </div>
-
-        </div>
-      </section>
     </>
   )
 }
