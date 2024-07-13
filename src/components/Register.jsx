@@ -7,31 +7,40 @@ const RegistrationPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState(null);
+  const [phone, setPhone] = useState('');
+  const [address, setAddress] = useState('');
+  const [errors, setError] = useState(null);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    if (password !== confirmPassword) {
-      setError('Passwords do not match');
-      return;
-    }
-    try {
+    const isValid = validateForm();
+    if (isValid) {
       // Call API to register user
-      const response = await fetch('/api/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, email, password }),
-      });
-      const data = await response.json();
-      if (data.error) {
-        setError(data.error);
-      } else {
-        // Registration successful, redirect to login page
-        window.location.href = '/login';
-      }
-    } catch (error) {
-      setError('An error occurred during registration');
+      console.log('Registration successful!');
     }
+  };
+  const validateForm = () => {
+    const errors = {};
+    if (!username) {
+      errors.username = 'Name is required';
+    }
+    if (!email) {
+      errors.email = 'Email is required';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
+      errors.email = 'Invalid email address';
+    }
+    if (!password) {
+      errors.password = 'Password is required';
+    } else if (password.length < 8) {
+      errors.password = 'Password must be at least 8 characters';
+    }
+    if (!confirmPassword) {
+      errors.confirmPassword = 'Confirm password is required';
+    } else if (confirmPassword !== password) {
+      errors.confirmPassword = 'Passwords do not match';
+    }
+    setError(errors);
+    return Object.keys(errors).length === 0;
   };
 
   return (
@@ -40,27 +49,40 @@ const RegistrationPage = () => {
       <form onSubmit={handleSubmit}>
         <label>
           Username:
-          <input type="text" value={username} onChange={(event) => setUsername(event.target.value)} />
+          <input type="text" required value={username} onChange={(event) => setUsername(event.target.value)} />
+          {/* {errors.name && <div style={{ color: 'red' }}>{errors.name}</div>} */}
         </label>
         <br />
         <label>
           Email:
           <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+          {/* {errors.email && <div style={{ color: 'ed' }}>{errors.email}</div>} */}
         </label>
         <br />
         <label>
           Password:
-          <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+          <input type="password" required value={password} onChange={(event) => setPassword(event.target.value)} />
         </label>
         <br />
         <label>
           Confirm Password:
-          <input type="password" value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} />
+          <input type="password" required value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} />
         </label>
         <br />
-        {error && <div style={{ color: 'red' }}>{error}</div>}
-       <Link to={'/login'}><button type="submit">Register Me</button></Link>
-        
+        <label>
+          Phone Number :
+          <input type="number" required value={phone} onChange={(event) => setPhone(event.target.value)} />
+        </label>
+        <br />
+        <label>
+          Address :
+          <input type="text" value={address} onChange={(event) => setAddress(event.target.value)} />
+        </label>
+        <br />
+        {errors && <div style={{ color: 'red', backgroundColor: 'white' }}>{errors}</div>}
+        <button type="submit">Register Me</button>
+        {/* <Link to={'/login'}><button type="submit">Register Me</button></Link> */}
+
       </form>
     </div>
   );
